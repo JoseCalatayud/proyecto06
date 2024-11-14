@@ -9,7 +9,7 @@ public class Perro {
     }
 
     public void comer(double pesoComida) {
-        this.peso += pesoComida;
+        this.peso +=  pesoComida;
 
     }
 
