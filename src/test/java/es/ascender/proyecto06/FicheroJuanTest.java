@@ -1,10 +1,12 @@
 package es.ascender.proyecto06;
 
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.io.File;
 import java.io.IOException;
+import java.nio.charset.Charset;
 
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
@@ -68,8 +70,21 @@ public class FicheroJuanTest {
     }
 
     @Test
-    void testLeerEnBloques() {
-        System.out.println("Estoy en leer en bloques");
+    void testLeerEnBloques() throws IOException {
+        byte [] leido = cut.leerEnBloques("./src/test/resources/jose.txt");
+        assertArrayEquals("adios".getBytes(), leido);
+    }
+    @Test
+    void testEncoding (){
+        String cadena1 = "Hola";
+        String cadena2 = "Hola";
+        
+        byte [] bytes1 = "hola".getBytes(Charset.forName("UTF-8"));
+        byte [] bytes2 = "hola".getBytes(Charset.forName("ISO-8859-1"));
+
+        assertArrayEquals(bytes1, bytes2);
+
+
     }
 
 

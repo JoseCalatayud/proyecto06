@@ -4,6 +4,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+import java.util.List;
 import java.util.Objects;
 
 import javax.naming.OperationNotSupportedException;
@@ -26,4 +27,14 @@ public class PerroTest {
         assertTrue(Objects.equals(caniche, doberman));
         assertTrue(caniche.equals(doberman));
     }
+    // @Test
+    // void mismosPerros () {
+    //     Perro perro1 = new Perro ("1",3);
+    //     Perro perro2 = new Perro ("2",3);
+    //     Perro perro3 = new Perro ("3",3);
+    //     Perro perro4 = new Perro ("4",3);
+    //     List <Perro> lista1;
+    //     List <Perro> lista2;
+    //     List <Perro> lista3;
+    // }
 }
