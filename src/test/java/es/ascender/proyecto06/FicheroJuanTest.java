@@ -3,6 +3,7 @@ package es.ascender.proyecto06;
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.fail;
 
 import java.io.File;
 import java.io.IOException;
@@ -76,13 +77,20 @@ public class FicheroJuanTest {
     }
     @Test
     void testEncoding (){
-        String cadena1 = "Hola";
-        String cadena2 = "Hola";
+        String cadena = "Hola";
         
-        byte [] bytes1 = "hola".getBytes(Charset.forName("UTF-8"));
-        byte [] bytes2 = "hola".getBytes(Charset.forName("ISO-8859-1"));
+        
+        byte [] bytes1 = cadena.getBytes(Charset.forName("UTF-8"));
+        byte [] bytes2 = cadena.getBytes(Charset.forName("ISO-8859-1"));
 
-        assertArrayEquals(bytes1, bytes2);
+        for (int i = 0; i < bytes1.length; i++) {
+            if (bytes1[i]!= bytes2[i]) {
+                return;
+            }
+        }
+        fail("No he encotrado diferencias");
+
+        
 
 
     }
